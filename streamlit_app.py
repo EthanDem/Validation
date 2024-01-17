@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-backendUrl = ""
+backendUrl = "https://validator-backend-icecube1513.replit.app/request"
 
 
 input = st.text_input("Enter query here")
