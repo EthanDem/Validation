@@ -10,8 +10,8 @@ payload = {
   "message": input
 }
 
-if st.button("Submit")
+if st.button("Submit"):
 
-req = requests.post(backendUrl, json=payload)
-
-st.write(req.content)
+  req = requests.post(backendUrl, json=payload)
+  
+  st.write(req.content)
