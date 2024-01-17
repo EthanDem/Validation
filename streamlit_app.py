@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-
+import json
 backendUrl = "https://validator-backend-icecube1513.replit.app/request"
 
 
@@ -14,4 +14,14 @@ if st.button("Submit"):
 
   req = requests.post(backendUrl, json=payload)
   
-  st.write(req.content)
+  response = req.content
+
+  response_str = response.decode("utf-8")
+
+  response_json = json.loads(response_str)
+
+  message = response_json.get('message')
+
+  st.write(message)
+
+  
